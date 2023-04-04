@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    RED.nodes.registerType('globalkeypress', {
+      category: 'input',
+      color: '#ff3c00',
+      defaults: {
+        keyboard: {value: ''},
+        barcode: {value: ''}
+      },
+      inputs: 1,
+      outputs: 1,
+      icon: 'globalkeypress.png',
+      label: function() {
+        return this.key ? ('globalkeypress ' + this.key) : 'globalkeypress';
+      }
+    });
+  </script>
+  
+  <script type="text/html" data-template-name="globalkeypress">
+    <div class="form-row">
+      <label for="node-input-keyboard"><i class="icon-tag"></i>Keyboard</label>
+      <input type="text" id="node-input-keyboard" placeholder="dev/input/eventX">
+    </div>
+    <div class="form-row">
+      <label for="node-input-barcode"><i class="icon-tag"></i>Barcode</label>
+      <input type="text" id="node-input-barcode" placeholder="dev/input/eventX">
+    </div>
+  </script>
+  
+  <script type="text/html" data-help-name="globalkeypress">
+    <p>A simple node that captures keys in terminal and sends them to flow.</p>
+    <p>Keys are captured when node receives message in terminal where node-red was started.</p>
+  </script>
+  
