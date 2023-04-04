@@ -1,64 +1,5 @@
 const InputEvent = require('input-event');
 
-// // Number of active nodes of this type
-// var globalKeypressNodes = 0;
-
-// const code_keybord = {
-//     // Input number
-//     "2": "1",
-//     "3": "2",
-//     "4": "3",
-//     "5": "4",
-//     "6": "5",
-//     "7": "6",
-//     "8": "7",
-//     "9": "8",
-//     "10": "9",
-//     "11": "0",
-    
-//     // Input Keypad
-//     "79": "1",
-//     "80": "2",
-//     "81": "3",
-//     "75": "4",
-//     "76": "5",
-//     "77": "6",
-//     "71": "7",
-//     "72": "8",
-//     "73": "9",
-//     "82": "0",
-    
-//    1 // Enter
-//     "96": "ENTER",
-//     // Backspace
-//     "14": "BACKSPACE",
-//     // Space
-//     "57": "SPACE"
-//   }
-
-// module.exports = function(RED){
-
-//     function GlobalKeyPress(config){
-//         RED.nodes.createNode(this, config);
-//         var node = this;
-//         node.key = config.key;
-
-//         if(process.stdout.isTTY) {
-//             process.stdin.setRawMode(true);
-//         } else {
-//             node.log('Raw mode not supported in this terminal');
-//         }
-
-//         process.stdin.on('keypress', onKeyPress);
-//         if(keypressNodes === 0) {
-//             keypress(process.stdin);
-//             process.stdin.resume();
-//             node.log('Started keypress capturing');
-//         }
-
-//     }
-// }
-
 const code_keybord = {
     // Input number
     "2": "1",
@@ -112,27 +53,6 @@ module.exports = function(RED) {
         keypressNodes++;
 
         function onGlobalKeyPrress(){
-            // try{
-            //     var input_key = new InputEvent(node.keyboard);
-            //     var keyboard = new InputEvent.Keyboard(input_key);
-            // }
-            // catch(err){
-            //     node.error(err.message)
-            // }
-
-            // keyboard.on('keyup', function(data){
-            //     let key_code =String(data.code);
-            //     let key_str = code_keybord[key_code];
-            //     if (typeof(key_str)!== 'undefined'){
-            //         // console.log(code_keybord[key_code]);
-            //         var message = {
-            //                 payload: {
-            //                     "key": key_str
-            //                 }
-            //             };
-            //         node.send(message);
-            //     }
-            // });
             if(node.keyboard){
                 console.log('Keyboard')
                 try{
